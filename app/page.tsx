@@ -52,9 +52,13 @@ export default function Home() {
 
                   <a
                     href="#contato"
-                    className="border border-[#2563EB]/50 text-[#E2E8F0]
-                    px-6 py-3 rounded-full hover:bg-[#2563EB]/10
-                    transition-all"
+                    className="rounded-full px-5 py-3 text-sm font-semibold
+                    text-[#F8FAFC]
+                    border border-[#2563EB]/50
+                    bg-[#2563EB]/10
+                    hover:bg-[#2563EB]
+                    hover:border-[#2563EB]
+                    transition-all duration-300"
                   >
                     Contato
                   </a>
@@ -170,7 +174,30 @@ export default function Home() {
           id="sobre"
           className="min-h-screen bg-[#0D1728] flex items-center justify-center"
         >
-          <h1 className="text-4xl text-white">Sobre mim</h1>
+          
+          <div className="max-w-6xl mx-auto px-6 w-full">
+            <div className="flex flex-col items-center">
+              <div className="z-10">
+                {/* Card "Sobre" */}
+                <div className="
+                  bg-[#111D32]/95
+                  backdrop-blur-xl
+                  border border-[#2563EB]/25
+                  shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+                  rounded-xl
+                  p-8">
+                  <h2 className="text-3xl font-bold text-[#F8FAFC] mb-4">
+                    Sobre mim
+                  </h2>
+                  <p className="text-[#94A3B8] leading-relaxed">
+                    Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais modernas, funcionais e criativas. Com experiência em Next.js, React, Rust e .NET, busco transformar ideias em produtos que impactem positivamente a vida das pessoas.
+                  </p>
+                
+                </div>
+              </div>
+            </div>  
+          </div>
+
         </section>
 
         {/* PROJETOS */}
