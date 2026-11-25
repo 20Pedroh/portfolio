@@ -15,7 +15,13 @@ export default function Home() {
       <main>
         <section
           id="inicio"
-          className="min-h-screen bg-[#080E1B] flex items-center justify-center overflow-hidden"
+          className="
+            relative
+            min-h-screen
+            bg-[var(--background)]
+            flex items-center justify-center
+            overflow-hidden
+          "
         >
           <div className="max-w-6xl mx-auto px-6 w-full">
 
@@ -23,42 +29,55 @@ export default function Home() {
 
               {/* APRESENTAÇÃO */}
               <div className="z-10">
-                <p className="text-[#38BDF8] mb-3 font-medium">
+                <p className="text-[var(--accent)] mb-3 font-medium">
                   Olá, eu sou
                 </p>
 
-                <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-4">
+                <h1 className="text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4">
                   Pedro Henrique Rodrigues
-                  <span className="text-[#38BDF8]">.</span>
+                  <span className="text-[var(--accent)]">.</span>
                 </h1>
 
-                <p className="text-xl text-[#94A3B8]">
+                <p className="text-xl text-[var(--muted)]">
                   Desenvolvedor Full Stack
                 </p>
 
-                <p className="text-[#94A3B8] mt-5 max-w-md leading-relaxed">
+                <p className="text-[var(--muted)] mt-5 max-w-md leading-relaxed">
                   Transformando ideias em soluções digitais modernas,
                   funcionais e criativas.
                 </p>
 
-                <div className="flex gap-4 mt-8">
+                <div className="flex flex-wrap gap-4 mt-8">
                   <a
                     href="#projetos"
-                    className="bg-[#2563EB] text-white px-6 py-3 rounded-full
-                    hover:bg-[#1D4ED8] transition-all"
+                    className="
+                      bg-[var(--primary)]
+                      text-white
+                      px-6 py-3
+                      rounded-full
+                      font-semibold
+                      hover:brightness-110
+                      hover:-translate-y-1
+                      transition-all duration-300
+                    "
                   >
                     Meus projetos ↗
                   </a>
 
                   <a
                     href="#contato"
-                    className="rounded-full px-5 py-3 text-sm font-semibold
-                    text-[#F8FAFC]
-                    border border-[#2563EB]/50
-                    bg-[#2563EB]/10
-                    hover:bg-[#2563EB]
-                    hover:border-[#2563EB]
-                    transition-all duration-300"
+                    className="
+                      rounded-full
+                      px-5 py-3
+                      text-sm font-semibold
+                      text-[var(--foreground)]
+                      border border-[var(--border)]
+                      bg-[var(--surface)]
+                      hover:bg-[var(--primary)]
+                      hover:text-white
+                      hover:border-[var(--primary)]
+                      transition-all duration-300
+                    "
                   >
                     Contato
                   </a>
@@ -72,7 +91,7 @@ export default function Home() {
 
                   {/* BRILHO DE FUNDO */}
                   <div className="absolute inset-16 rounded-full
-                    bg-blue-600/20 blur-[70px]"
+                    bg-[var(--accent)]/20 blur-[70px]"
                   />
 
                   {/* FOTO */}
@@ -92,7 +111,7 @@ export default function Home() {
                         rounded-full
                         object-cover
                         border-[5px]
-                        border-[#080E1B]
+                        border-[var(--background-secondary)]
                       "
                     />
                   </div>
@@ -151,7 +170,7 @@ export default function Home() {
               <a href="#sobre" className="animate-bounce block">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-[#38BDF8]"
+                  className="h-6 w-6 text-[var(--accent)]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -172,24 +191,28 @@ export default function Home() {
         {/* SOBRE */}
         <section
           id="sobre"
-          className="min-h-screen bg-[#0D1728] flex items-center justify-center"
-        >
-          
+          className="
+            min-h-screen
+            bg-[var(--background-secondary)]
+            flex items-center justify-center
+          ">
+        
           <div className="max-w-6xl mx-auto px-6 w-full">
             <div className="flex flex-col items-center">
               <div className="z-10">
                 {/* Card "Sobre" */}
                 <div className="
-                  bg-[#111D32]/95
+                  bg-[var(--surface)]/95
                   backdrop-blur-xl
-                  border border-[#2563EB]/25
-                  shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+                  border border-[var(--border)]
+                  shadow-[0_8px_30px_var(--shadow)]
                   rounded-xl
-                  p-8">
-                  <h2 className="text-3xl font-bold text-[#F8FAFC] mb-4">
+                  p-8
+                ">
+                  <h2 className="text-3xl font-bold text-[var(--foreground)] mb-4">
                     Sobre mim
                   </h2>
-                  <p className="text-[#94A3B8] leading-relaxed">
+                  <p className="text-[var(--muted)] leading-relaxed">
                     Sou um desenvolvedor Full Stack apaixonado por criar soluções digitais modernas, funcionais e criativas. Com experiência em Next.js, React, Rust e .NET, busco transformar ideias em produtos que impactem positivamente a vida das pessoas.
                   </p>
                 
@@ -203,25 +226,25 @@ export default function Home() {
         {/* PROJETOS */}
         <section
           id="projetos"
-          className="min-h-screen bg-[#080E1B] flex items-center justify-center"
+          className="min-h-screen bg-[var(--background)] flex items-center justify-center"
         >
-          <h1 className="text-4xl text-white">Meus projetos</h1>
+          <h1 className="text-4xl text-[var(--foreground)]">Meus projetos</h1>
         </section>
 
         {/* HABILIDADES */}
         <section
           id="habilidades"
-          className="min-h-screen bg-[#0D1728] flex items-center justify-center"
+          className="min-h-screen bg-[var(--background-secondary)] flex items-center justify-center"
         >
-          <h1 className="text-4xl text-white">Habilidades</h1>
+          <h1 className="text-4xl text-[var(--foreground)]">Habilidades</h1>
         </section>
 
         {/* CONTATO */}
         <section
           id="contato"
-          className="min-h-screen bg-[#080E1B] flex items-center justify-center"
+          className="min-h-screen bg-[var(--background)] flex items-center justify-center"
         >
-          <h1 className="text-4xl text-white">Entre em contato</h1>
+          <h1 className="text-4xl text-[var(--foreground)]">Entre em contato</h1>
         </section>
 
       </main>
@@ -242,24 +265,22 @@ function TechBadge({
       flex items-center gap-3
       px-4 py-3
       rounded-xl
-      bg-[#111D32]/95
+      bg-[var(--surface)]/95
       backdrop-blur-xl
-      border border-[#2563EB]/25
-      shadow-[0_8px_30px_rgba(0,0,0,0.25)]
-      hover:border-[#38BDF8]/60
+      border border-[var(--border)]
+      shadow-lg
+      hover:border-[var(--accent)]/60
       hover:-translate-y-1
       transition-all duration-300
       whitespace-nowrap
     ">
-
-      <span className="text-2xl text-[#38BDF8]">
+      <span className="text-2xl text-[var(--accent)]">
         {icon}
       </span>
 
-      <span className="text-sm font-semibold text-[#E2E8F0]">
+      <span className="text-sm font-semibold text-[var(--foreground)]">
         {name}
       </span>
-
     </div>
   );
 }
