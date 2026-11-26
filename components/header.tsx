@@ -15,6 +15,7 @@ const menuItems = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const { theme, setTheme } = useTheme();
 
@@ -36,29 +37,43 @@ export function Header() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header
       className={`
         fixed top-0 left-0 z-50 w-full
-        transition-all duration-500
+        h-20
+        transition-all duration-300
         ${
           scrolled
-            ? "bg-[var(--background)]/85 backdrop-blur-xl py-3 shadow-lg"
-            : "bg-transparent py-6"
+            ? "bg-[var(--background)]/85 backdrop-blur-xl shadow-lg"
+            : "bg-transparent"
         }
       `}
     >
-      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <nav className="
+        relative max-w-6xl mx-auto
+        h-full px-4 sm:px-6
+        flex items-center justify-between gap-3
+      ">
 
         {/* LOGO */}
         <a
           href="#inicio"
-          className="text-2xl font-bold tracking-tight text-[var(--foreground)]"
+          onClick={closeMobileMenu}
+          className="
+            text-2xl font-bold tracking-tight
+            text-[var(--foreground)]
+            shrink-0
+          "
         >
           Pedro<span className="text-[var(--accent)]">.</span>
         </a>
 
-        {/* MENU */}
+        {/* MENU DESKTOP */}
         <div className="hidden md:flex items-center gap-9">
           {menuItems.map((item) => (
             <a
@@ -89,26 +104,28 @@ export function Header() {
         </div>
 
         {/* AÇÕES */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
 
-          {/* CONTATO */}
+          {/* Lembrar de criar uma Api de Email pra essa função */}
+          {/* CONTATO DESKTOP
           <a
             href="#contato"
             className="
+              hidden md:inline-flex
+              items-center
               rounded-full px-5 py-2.5
               text-sm font-semibold
-              text-[var(--primary)]
+              text-[var(--foreground)]
               border border-[var(--primary)]/50
               bg-[var(--primary)]/10
-              text-[var(--foreground)]
               hover:bg-[var(--primary)]
-              hover:text-[var(--foreground)]
               hover:border-[var(--primary)]
               transition-all duration-300
+              whitespace-nowrap
             "
           >
             Vamos conversar <span className="ml-1">↗</span>
-          </a>
+          </a> */}
 
           {/* TOGGLE DE TEMA */}
           <button
@@ -117,7 +134,7 @@ export function Header() {
             aria-label="Alternar tema"
             title="Alternar tema"
             className="
-              w-10 h-10 rounded-full
+              w-10 h-10 shrink-0 rounded-full
               flex items-center justify-center
               border border-[var(--border)]
               bg-[var(--surface)]
@@ -165,7 +182,111 @@ export function Header() {
             )}
           </button>
 
+          {/* BOTÃO MENU MOBILE */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+            className="
+              md:hidden
+              w-10 h-10 shrink-0 rounded-full
+              flex items-center justify-center
+              border border-[var(--border)]
+              bg-[var(--surface)]
+              text-[var(--foreground)]
+              hover:border-[var(--accent)]
+              hover:text-[var(--accent)]
+              transition-all duration-300
+            "
+          >
+            {mobileMenuOpen ? (
+              /* ÍCONE FECHAR */
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 6l12 12M18 6L6 18"
+                />
+              </svg>
+            ) : (
+              /* ÍCONE HAMBÚRGUER */
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 7h16M4 12h16M4 17h16"
+                />
+              </svg>
+            )}
+          </button>
+
         </div>
+
+        {/* MENU MOBILE DROPDOWN */}
+        <div
+          id="mobile-menu"
+          className={`
+            md:hidden
+            absolute top-full right-4 left-4
+            mt-2
+            rounded-2xl
+            border border-[var(--border)]
+            bg-[var(--background)]/95
+            backdrop-blur-xl
+            shadow-xl
+            overflow-hidden
+            transition-all duration-300 origin-top
+            ${
+              mobileMenuOpen
+                ? "opacity-100 translate-y-0 scale-100 visible"
+                : "opacity-0 -translate-y-2 scale-95 invisible pointer-events-none"
+            }
+          `}
+        >
+          <div className="flex flex-col p-3">
+
+            {menuItems.map((item, index) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={closeMobileMenu}
+                className="
+                  flex items-center justify-between
+                  px-4 py-3.5
+                  rounded-xl
+                  text-sm font-medium
+                  text-[var(--muted)]
+                  hover:text-[var(--accent)]
+                  hover:bg-[var(--surface)]
+                  transition-all duration-200
+                "
+              >
+                {item.label}
+
+                {/* <span className="text-[var(--accent)] text-xs">
+                  {String(index + 1).padStart(2, "0")}
+                </span> */}
+              </a>
+            ))}
+
+          </div>
+        </div>
+
       </nav>
     </header>
   );
