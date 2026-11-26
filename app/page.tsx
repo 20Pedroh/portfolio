@@ -21,6 +21,7 @@ export default function Home() {
             bg-[var(--background)]
             flex items-center justify-center
             overflow-hidden
+            pt-20 sm:pt-24 md:pt-0
           "
         >
           <div className="max-w-6xl mx-auto px-6 w-full">
