@@ -222,6 +222,10 @@ export default function Home() {
                     digitais modernas, funcionais e criativas. Com experiência em
                     Next.js, React, Rust e .NET, busco transformar ideias em produtos
                     que impactem positivamente a vida das pessoas.
+                    Possuo habilidades em desenvolvimento web, design de interfaces e integração de sistemas, sempre
+                    buscando aprender novas tecnologias e aprimorar minhas competências.
+
+
                   </p>
                 </div>
               </div>
@@ -244,7 +248,7 @@ export default function Home() {
                     <div className="flex items-center gap-4 mb-4">
 
                       <div className="w-12 h-12 shrink-0 rounded-lg bg-[var(--background-secondary)] flex items-center justify-center">
-                        <img src="/instituicoes/if.png" alt="IF Sudeste MG" className="w-9 h-9 object-contain"/>
+                        <img src="/instituicoes/ifmg.png" alt="IF Sudeste MG" className="w-9 h-9 object-contain"/>
                       </div>
 
                       <h4 className="font-semibold text-[var(--foreground)]">
@@ -277,7 +281,7 @@ export default function Home() {
                   ">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 shrink-0 rounded-lg bg-[var(--background-secondary)] flex items-center justify-center">
-                        <img src="/instituicoes/faculdade.png" alt="Instituição" className="w-9 h-9 object-contain"/>
+                        <img src="/instituicoes/descomplica.png" alt="Instituição" className="w-9 h-9 object-contain"/>
                       </div>
 
                       <h4 className="font-semibold text-[var(--foreground)]">
@@ -310,7 +314,7 @@ export default function Home() {
                   ">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 shrink-0 rounded-lg bg-[var(--background-secondary)] flex items-center justify-center">
-                        <img src="/instituicoes/faculdade.png" alt="Instituição" className="w-9 h-9 object-contain"/>
+                        <img src="/instituicoes/descomplica.png" alt="Instituição" className="w-9 h-9 object-contain"/>
                       </div>
 
                       <h4 className="font-semibold text-[var(--foreground)]">
@@ -343,7 +347,7 @@ export default function Home() {
                   ">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 shrink-0 rounded-lg bg-[var(--background-secondary)] flex items-center justify-center">
-                        <img src="/instituicoes/faculdade.png" alt="Instituição" className="w-9 h-9 object-contain"/>
+                        <img src="instituicoes/cruzeiro_do_sul.png" alt="Instituição" className="w-9 h-9 object-contain"/>
                       </div>
 
                       <h4 className="font-semibold text-[var(--foreground)]">
