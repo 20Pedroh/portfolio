@@ -28,9 +28,9 @@ export default function About() {
               </h2>
 
               <p className="text-[var(--muted)] leading-relaxed">
-                Sou um desenvolvedor Full Stack apaixonado por criar soluções
+                Sou um desenvolvedor Full Stack empenhado em criar soluções
                 digitais modernas, funcionais e criativas. Com experiência em
-                Next.js, React, Rust e .NET, busco transformar ideias em produtos
+                Next.js, PHP, JAVA, React, Rust e .NET, busco transformar ideias em produtos
                 que impactem positivamente a vida das pessoas.
                 Possuo habilidades em desenvolvimento web, design de interfaces
                 e integração de sistemas, sempre buscando aprender novas
